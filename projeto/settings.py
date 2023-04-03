@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     #INFORMAR OS APPS TAMBÉM
-    "recipes",
+    "games",
 ]
 
 MIDDLEWARE = [
