@@ -1,0 +1,12 @@
+.main-header-container{
+    background-color: rgb(236, 195, 10);
+     
+}
+.nome-empresa{
+    text-decoration: none;  
+    color: black;
+}
+.div-header-container{
+    display: block;
+    margin: 0 auto;
+}
