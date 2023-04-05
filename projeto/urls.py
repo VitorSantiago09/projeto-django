@@ -19,10 +19,20 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from games.views import home, Contato
+#Aqui importamos a routers pra poder 
+from rest_framework import routers
+
+from games.views import CategoryView
+
+router = routers.DefaultRouter()
+router.register('api-auth', CategoryView)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', include('games.urls'))
+    path("home/", home),
+    path("contato/", Contato.as_view()),
+    path('', include(router.urls)),
 ]
 
 #Isso serve para poder ver a imagem quando clicarmos nela dentro do site.
