@@ -20,20 +20,25 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from games.views import home, Contato
-#Aqui importamos a routers pra poder 
+from games.views import CategoryView
+#Aqui importamos a routers pra poder ditar a rota do endpoint da API
 from rest_framework import routers
 
-from games.views import CategoryView
 
+#Registra a rota api-auth como sendo a rota que recebera a CategoryView, sendo onde acontecerá o CRUD
 router = routers.DefaultRouter()
 router.register('api-auth', CategoryView)
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("home/", home),
     path("contato/", Contato.as_view()),
+    #Define a rota "" como sendo a rota onde sera renderizada a pagina inicial da api e onde fica o endpoint para que o front possa fazer a requisição
     path('', include(router.urls)),
 ]
 
+
 #Isso serve para poder ver a imagem quando clicarmos nela dentro do site.
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

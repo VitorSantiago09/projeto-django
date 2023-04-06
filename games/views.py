@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from games.models import Category
 from games.serializer import CategorySerializer
 
-#
+#Campos que importam o rest framework para o projeto
 from rest_framework import viewsets, filters
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.authentication import BasicAuthentication
